@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= doctor ? 'Edit' : 'Tambah' %> Dokter</title>
+</head>
+<body>
+  <h1><%= doctor ? 'Edit' : 'Tambah' %> Dokter</h1>
+  <form action="<%= doctor ? '/doctors/edit/' + doctor.id : '/doctors/add' %>" method="POST">
+    <label for="nama">Nama:</label>
+    <input type="text" name="nama" value="<%= doctor ? doctor.nama : '' %>" required><br><br>
+    <label for="nohp">No HP:</label>
+    <input type="text" name="nohp" value="<%= doctor ? doctor.nohp : '' %>" required><br><br>
+    <button type="submit"><%= doctor ? 'Update' : 'Tambah' %> Dokter</button>
+  </form>
+</body>
+</html>
